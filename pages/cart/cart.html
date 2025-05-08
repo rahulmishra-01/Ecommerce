@@ -1,124 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Cart - E-Commerce Store</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../styles/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../styles/style.css" />
     <script src="cart.js" defer></script>
     <script src="../../scripts/script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="cart-page">
-        <!-- Header (Reuse your existing header) -->
-        <!-- Header Section -->
-    <header class="header">
+      <!-- Header (Reuse your existing header) -->
+      <!-- Header Section -->
+      <header class="header">
         <div class="logo">
-            <a href="#"><img src="https://via.placeholder.com/150x50?text=LOGO" alt="Logo"></a>
+          <a href="#"
+            ><img src="https://via.placeholder.com/150x50?text=LOGO" alt="Logo"
+          /></a>
         </div>
 
         <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="../../index.html" class="active">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+          <ul class="nav-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../pages/shop/shop.html">Shop</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </nav>
 
         <div class="header-actions">
-            <button id="theme-toggle" class="theme-btn">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="cart-btn">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
-            </button>
-            <button class="hamburger">
-                <i class="fas fa-bars"></i>
-            </button>
+          <button id="theme-toggle" class="theme-btn">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="cart-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </button>
+          <button class="hamburger">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
-    </header>
+      </header>
 
-        <!-- Main Cart Content -->
-        <main class="cart-container">
-            <h1>Your Shopping Cart</h1>
-            
-            <div class="cart-wrapper">
-                <!-- Cart Items -->
-                <div class="cart-items">
-                    <div class="cart-item">
-                        <div class="item-image">
-                            <img src="../../assets/images/1.jpg" alt="Wireless Headphones">
-                        </div>
-                        <div class="item-details">
-                            <h3>Wireless Headphones Pro X3</h3>
-                            <p class="item-sku">SKU: HP-X3-BLACK</p>
-                            <div class="item-price">$89.99</div>
-                            <div class="item-actions">
-                                <div class="quantity-selector">
-                                    <button class="qty-btn minus">-</button>
-                                    <input type="number" value="1" min="1" class="qty-input">
-                                    <button class="qty-btn plus">+</button>
-                                </div>
-                                <button class="remove-item">
-                                    <i class="fas fa-trash"></i> Remove
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+      <!-- Main Cart Content -->
+      <main class="cart-container">
+        <h1>Your Shopping Cart</h1>
 
-                    <div class="cart-item">
-                        <div class="item-image">
-                            <img src="../../assets/images/2.jpg" alt="Smart Watch">
-                        </div>
-                        <div class="item-details">
-                            <h3>Smart Watch Series 5</h3>
-                            <p class="item-sku">SKU: SW-5-SILVER</p>
-                            <div class="item-price">$129.99</div>
-                            <div class="item-actions">
-                                <div class="quantity-selector">
-                                    <button class="qty-btn minus">-</button>
-                                    <input type="number" value="2" min="1" class="qty-input">
-                                    <button class="qty-btn plus">+</button>
-                                </div>
-                                <button class="remove-item">
-                                    <i class="fas fa-trash"></i> Remove
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+        <div class="cart-wrapper">
+          <!-- Cart Items -->
+          <div class="cart-items">
+            <div class="cart-item">
+              <div class="item-image">
+                <img
+                  src="../../assets/images/1.jpg"
+                  alt="Wireless Headphones"
+                />
+              </div>
+              <div class="item-details">
+                <h3>Wireless Headphones Pro X3</h3>
+                <p class="item-sku">SKU: HP-X3-BLACK</p>
+                <div class="item-price">$89.99</div>
+                <div class="item-actions">
+                  <div class="quantity-selector">
+                    <button class="qty-btn minus">-</button>
+                    <input type="number" value="1" min="1" class="qty-input" />
+                    <button class="qty-btn plus">+</button>
+                  </div>
+                  <button class="remove-item">
+                    <i class="fas fa-trash"></i> Remove
+                  </button>
                 </div>
-
-                <!-- Order Summary -->
-                <div class="order-summary">
-                    <h2>Order Summary</h2>
-                    <div class="summary-row">
-                        <span>Subtotal (2 items)</span>
-                        <span>$219.98</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Shipping</span>
-                        <span class="free-shipping">FREE</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Tax</span>
-                        <span>$18.00</span>
-                    </div>
-                    <div class="summary-row total">
-                        <span>Total</span>
-                        <span>$237.98</span>
-                    </div>
-                    <button class="checkout-btn">Proceed to Checkout</button>
-                    <div class="continue-shopping">
-                        <i class="fas fa-arrow-left"></i>
-                        <a href="#">Continue Shopping</a>
-                    </div>
-                </div>
+              </div>
             </div>
-        </main>
+
+            <div class="cart-item">
+              <div class="item-image">
+                <img src="../../assets/images/2.jpg" alt="Smart Watch" />
+              </div>
+              <div class="item-details">
+                <h3>Smart Watch Series 5</h3>
+                <p class="item-sku">SKU: SW-5-SILVER</p>
+                <div class="item-price">$129.99</div>
+                <div class="item-actions">
+                  <div class="quantity-selector">
+                    <button class="qty-btn minus">-</button>
+                    <input type="number" value="2" min="1" class="qty-input" />
+                    <button class="qty-btn plus">+</button>
+                  </div>
+                  <button class="remove-item">
+                    <i class="fas fa-trash"></i> Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+              <span>Subtotal (<span class="item-count">0 items</span>)</span>
+              <span class="subtotal-amount">$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span class="free-shipping shipping-amount">FREE</span>
+            </div>
+            <div class="summary-row">
+              <span>Tax</span>
+              <span class="tax-amount">$0.00</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <span class="total-amount">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+            <div class="continue-shopping">
+              <i class="fas fa-arrow-left"></i>
+              <a href="../../index.html">Continue Shopping</a>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
-</body>
+  </body>
 </html>

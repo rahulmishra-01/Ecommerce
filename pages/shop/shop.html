@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Your Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <a href="#"><img src="https://via.placeholder.com/150x50?text=LOGO" alt="Logo"></a>
+        </div>
+
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="pages/shop/shop.html" class="active">Shop</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="theme-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="cart-btn" id="header-cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="shop-page">
+        <div class="shop-header">
+            <h1>Shop All Products</h1>
+            <div class="results-sort">
+                <span class="results-count"></span>
+                <select class="sort-options">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="newest">Newest Arrivals</option>
+                    <option value="rating">Top Rated</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="shop-container">
+            <!-- Filters Sidebar -->
+            <aside class="filters-sidebar">
+                <div class="filter-section">
+                    <h3 class="filter-title">Categories</h3>
+                    <ul class="filter-options">
+                        <li><label><input type="checkbox" name="category" value="electronics"> Electronics</label></li>
+                        <li><label><input type="checkbox" name="category" value="clothing"> Clothing</label></li>
+                        <li><label><input type="checkbox" name="category" value="home"> Home & Garden</label></li>
+                        <li><label><input type="checkbox" name="category" value="accessories"> Accessories</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter-section">
+                    <h3 class="filter-title">Price Range</h3>
+                    <div class="price-range">
+                      <div class="price-inputs">
+                        <input type="number" id="min-price" placeholder="Min" min="0" max="10000">
+                        <span>-</span>
+                        <input type="number" id="max-price" placeholder="Max" min="0" max="100000">
+                      </div>
+                      <input type="range" min="0" max="100000" value="100000" class="price-slider" id="price-slider">
+                      <div class="price-values">
+                        <span>₹0</span>
+                        <span id="price-value">₹1,00,000+</span>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="filter-section">
+                    <h3 class="filter-title">Colors</h3>
+                    <div class="color-options">
+                        <button class="color-chip" data-color="black" style="background-color: #000;"></button>
+                        <button class="color-chip" data-color="white" style="background-color: #fff; border: 1px solid #ddd;"></button>
+                        <button class="color-chip" data-color="red" style="background-color: #ff0000;"></button>
+                        <button class="color-chip" data-color="blue" style="background-color: #0066cc;"></button>
+                        <button class="color-chip" data-color="green" style="background-color: #00aa00;"></button>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3 class="filter-title">Sizes</h3>
+                    <div class="size-options">
+                        <button class="size-btn">XS</button>
+                        <button class="size-btn">S</button>
+                        <button class="size-btn">M</button>
+                        <button class="size-btn">L</button>
+                        <button class="size-btn">XL</button>
+                    </div>
+                </div>
+
+                <button class="clear-filters">Clear All Filters</button>
+            </aside>
+
+            <!-- Products Grid -->
+            <section class="products-grid"></section>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn next">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <script src="shop.js" type="module"></script>
+    <script src="../../scripts/script.js"></script>
+</body>
+</html>

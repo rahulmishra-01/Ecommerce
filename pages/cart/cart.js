@@ -2,6 +2,7 @@ const cartCount = document.querySelector('.cart-count');
 const cartBtn = document.getElementById('header-cart-btn');
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
+console.log("cart")
 
 // Quantity Adjustment
 document.querySelectorAll('.qty-btn').forEach(button => {
@@ -39,6 +40,7 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
         image: e.target.dataset.image,
         quantity: 1
       };
+      console.log(product)
   
       addToCart(product);
       showAddedToCart(product.name);
@@ -81,7 +83,7 @@ function renderCartItems() {
         </div>
         <div class="item-details">
           <h3>${item.name}</h3>
-          <div class="item-price">$${item.price.toFixed(2)}</div>
+          <div class="item-price">₹${item.price.toFixed(2)}</div>
           <div class="item-actions">
             <div class="quantity-selector">
               <button class="qty-btn minus">-</button>
@@ -157,3 +159,41 @@ function renderCartItems() {
   // Initialize
   updateCart();
   if (window.location.pathname.includes('cart.html')) renderCartItems();
+
+  // ===== ORDER SUMMARY CALCULATOR ===== //
+function updateOrderSummary() {
+  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const taxRate = 0.08; // 8% tax - adjust as needed
+  const tax = subtotal * taxRate;
+  const shipping = subtotal > 50 ? 0 : 5.99; // Free shipping over $50
+  const total = subtotal + tax + shipping;
+
+  // Update DOM
+  document.querySelector('.subtotal-amount').textContent = `₹${subtotal.toFixed(2)}`;
+  document.querySelector('.tax-amount').textContent = `₹${tax.toFixed(2)}`;
+  document.querySelector('.shipping-amount').textContent = 
+    shipping === 0 ? 'FREE' : `₹${shipping.toFixed(2)}`;
+  document.querySelector('.total-amount').textContent = `₹${total.toFixed(2)}`;
+  document.querySelector('.item-count').textContent = 
+    `${cart.reduce((sum, item) => sum + item.quantity, 0)} items`;
+
+  // Update shipping UI
+  const shippingElement = document.querySelector('.shipping-amount');
+  shipping === 0 
+    ? shippingElement.classList.add('free-shipping')
+    : shippingElement.classList.remove('free-shipping');
+}
+
+// ===== MODIFY EXISTING FUNCTIONS ===== //
+// Add this line at the end of updateCart()
+function updateCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+  updateOrderSummary(); // <-- Add this line
+  
+  if (window.location.pathname.includes('cart.html')) {
+    renderCartItems();
+  }
+}
+
+console.log("Cart Ending")
